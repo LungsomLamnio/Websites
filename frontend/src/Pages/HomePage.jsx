@@ -1,135 +1,140 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "emailjs-com"; // Import EmailJS
 import "../styles/HomePage.css";
 
 const Home = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Send email using EmailJS
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        e.target,
+        "YOUR_USER_ID" // Replace with your EmailJS user ID
+      )
+      .then(
+        (result) => {
+          setStatus("Message sent successfully!");
+          setFormData({ name: "", email: "", message: "" }); // Reset form
+        },
+        (error) => {
+          setStatus("Failed to send message. Please try again.");
+        }
+      );
+  };
+
+  // Card style for skills/projects
+  const cardStyle = {
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    borderRadius: "10px",
+    padding: "20px",
+    backgroundColor: "white",
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    cursor: "pointer",
+  };
+
+  const containerStyle = {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+    gap: "20px",
+    padding: "20px",
+  };
+
   return (
     <div className="home">
-      {/* Simple Header */}
+      {/* Header */}
       <header>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "10px 20px",
-          }}
-        >
-          {/* Logo */}
-          <div style={{ fontWeight: "bold", fontSize: "1.5rem" }}>LL</div>
-
-          {/* Navigation Links */}
+        <div className="header-container">
+          <div className="logo">LL</div>
           <nav>
-            <ul
-              style={{
-                display: "flex",
-                listStyle: "none",
-                margin: 0,
-                padding: 0,
-              }}
-            >
-              <li style={{ margin: "0 15px" }}>
-                <a
-                  href="#skills"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                    fontSize: "1rem",
-                  }}
-                >
-                  Skills
-                </a>
+            <ul className="nav-links">
+              <li>
+                <a href="#skills">Skills</a>
               </li>
-              <li style={{ margin: "0 15px" }}>
-                <a
-                  href="#experience"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                    fontSize: "1rem",
-                  }}
-                >
-                  Experience
-                </a>
+              <li>
+                <a href="#experience">Experience</a>
               </li>
-              <li style={{ margin: "0 15px" }}>
-                <a
-                  href="#projects"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                    fontSize: "1rem",
-                  }}
-                >
-                  Projects
-                </a>
+              <li>
+                <a href="#projects">Projects</a>
               </li>
-              <li style={{ margin: "0 15px" }}>
-                <a
-                  href="#blogs"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                    fontSize: "1rem",
-                  }}
-                >
-                  Blogs
-                </a>
-              </li>
-              <li style={{ margin: "0 15px" }}>
-                <a
-                  href="#contact"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                    fontSize: "1rem",
-                  }}
-                >
-                  Contact
-                </a>
+              <li>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           </nav>
         </div>
       </header>
 
-      {/* Skills Section */}
-      <section id="skills" className="skills">
-        <h2>Skills</h2>
-        <p>Here are some of the technologies and tools I excel at:</p>
-        <ul>
-          <li>React.js</li>
-          <li>Node.js</li>
-          <li>MongoDB</li>
-          <li>Express.js</li>
-          <li>HTML, CSS, JavaScript</li>
-        </ul>
+      {/* Introduction */}
+      <section id="intro" className="intro">
+        <h1>Hello, I am Lungsom Lamnio</h1>
+        <p>
+          Welcome to my personal portfolio. Here you'll find more about my
+          skills, experience, and projects.
+        </p>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="experience">
-        <h2>Experience</h2>
-        <p>Details about my professional experience and roles.</p>
+      {/* Skills Section */}
+      <section id="skills" className="skills" style={{ padding: "40px 20px" }}>
+        <h2>Skills</h2>
+        <p>Here are some of the technologies and tools I excel at:</p>
+        <div style={containerStyle}>
+          <div style={cardStyle} className="card">
+            <h3>React.js</h3>
+            <p>Building dynamic, user-friendly interfaces.</p>
+          </div>
+          <div style={cardStyle} className="card">
+            <h3>Node.js</h3>
+            <p>Building scalable backend applications.</p>
+          </div>
+          <div style={cardStyle} className="card">
+            <h3>MongoDB</h3>
+            <p>Database management and NoSQL solutions.</p>
+          </div>
+          <div style={cardStyle} className="card">
+            <h3>Express.js</h3>
+            <p>Framework for building server-side applications.</p>
+          </div>
+          <div style={cardStyle} className="card">
+            <h3>HTML, CSS, JavaScript</h3>
+            <p>Core web technologies for front-end development.</p>
+          </div>
+        </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="projects">
+      <section
+        id="projects"
+        className="projects"
+        style={{ padding: "40px 20px" }}
+      >
         <h2>Projects</h2>
-        <ul>
-          <li>
+        <div style={containerStyle}>
+          <div style={cardStyle} className="card">
             <h3>Project 1</h3>
             <p>A short description of your first project.</p>
-          </li>
-          <li>
+          </div>
+          <div style={cardStyle} className="card">
             <h3>Project 2</h3>
             <p>A short description of your second project.</p>
-          </li>
-        </ul>
-      </section>
-
-      {/* Blogs Section */}
-      <section id="blogs" className="blogs">
-        <h2>Blogs</h2>
-        <p>Read my latest articles and posts here.</p>
+          </div>
+        </div>
       </section>
 
       {/* Contact Section */}
@@ -143,6 +148,46 @@ const Home = () => {
             LinkedIn: <a href="https://linkedin.com">My LinkedIn</a>
           </li>
         </ul>
+
+        {/* Contact Form */}
+        <form onSubmit={handleSubmit} className="contact-form">
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+
+        {/* Status Message */}
+        {status && <p className="status-message">{status}</p>}
       </section>
 
       {/* Footer */}

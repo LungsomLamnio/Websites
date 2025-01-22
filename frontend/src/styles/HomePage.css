@@ -142,3 +142,8 @@ footer p {
   font-size: 0.9rem;
   opacity: 0.8;
 }
+
+header .logo {
+  font-size: 2rem; /* Adjust size */
+  font-weight: bold;
+}
