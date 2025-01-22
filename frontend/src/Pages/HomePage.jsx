@@ -39,7 +39,7 @@ const Home = () => {
       );
   };
 
-  // Card style for skills/projects
+  // Card style for skills/projects/experience
   const cardStyle = {
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
     borderRadius: "10px",
@@ -114,6 +114,50 @@ const Home = () => {
           <div style={cardStyle} className="card">
             <h3>HTML, CSS, JavaScript</h3>
             <p>Core web technologies for front-end development.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section
+        id="experience"
+        className="experience"
+        style={{ padding: "40px 20px" }}
+      >
+        <h2>Experience</h2>
+        <p>Here are some of the positions I have held:</p>
+        <div style={containerStyle}>
+          <div style={cardStyle} className="card">
+            <h3>Software Developer | ABC Corp</h3>
+            <p>Jan 2023 - Present</p>
+            <ul>
+              <li>
+                Developing and maintaining web applications using React and
+                Node.js
+              </li>
+              <li>
+                Collaborating with teams to ensure seamless integration of
+                systems
+              </li>
+              <li>
+                Participating in code reviews and optimizing existing
+                applications
+              </li>
+            </ul>
+          </div>
+          <div style={cardStyle} className="card">
+            <h3>Web Developer Intern | XYZ Ltd</h3>
+            <p>Jun 2022 - Dec 2022</p>
+            <ul>
+              <li>
+                Assisted in building and testing frontend features using HTML,
+                CSS, and JavaScript
+              </li>
+              <li>
+                Contributed to backend development with Node.js and MongoDB
+              </li>
+              <li>Created documentation for new features and improvements</li>
+            </ul>
           </div>
         </div>
       </section>
