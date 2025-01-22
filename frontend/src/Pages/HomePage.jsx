@@ -23,10 +23,10 @@ const Home = () => {
     // Send email using EmailJS
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        "service_cqenfdk", // Replace with your EmailJS service ID
+        "template_8lzgsae", // Replace with your EmailJS template ID
         e.target,
-        "YOUR_USER_ID" // Replace with your EmailJS user ID
+        "8vALFIyST5QuvqPO7" // Replace with your EmailJS user ID
       )
       .then(
         (result) => {
@@ -72,9 +72,6 @@ const Home = () => {
               </li>
               <li>
                 <a href="#projects">Projects</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
               </li>
             </ul>
           </nav>
@@ -137,19 +134,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Form */}
       <section id="contact" className="contact">
         <h2>Contact</h2>
-        <p>Feel free to reach out to me via the following channels:</p>
-        <ul>
-          <li>Email: example@example.com</li>
-          <li>Phone: +1234567890</li>
-          <li>
-            LinkedIn: <a href="https://linkedin.com">My LinkedIn</a>
-          </li>
-        </ul>
-
-        {/* Contact Form */}
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
             <label htmlFor="name">Name:</label>

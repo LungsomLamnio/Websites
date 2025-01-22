@@ -147,3 +147,71 @@ header .logo {
   font-size: 2rem; /* Adjust size */
   font-weight: bold;
 }
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0078d4;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #0078d4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #005bb5;
+}
+
+/* Status Message */
+.status-message {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1rem;
+  color: #0078d4;
+}
