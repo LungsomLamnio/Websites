@@ -80,9 +80,10 @@ header::after {
   margin-top: 10px;
 }
 
-/* Section Styles */
+/* Section Styles - Apply a uniform background color */
 section {
   padding: 60px 20px;
+  background-color: #f8f9fa; /* Uniform background color */
 }
 
 section h2 {
@@ -109,24 +110,25 @@ section ul li {
   margin-bottom: 10px;
 }
 
+/* Specific section overrides (optional) */
 #skills {
-  background-color: #f8f9fa;
+  background-color: #f8f9fa; /* Same as general sections */
 }
 
 #experience {
-  background-color: #ffffff;
+  background-color: #f8f9fa; /* Same as general sections */
 }
 
 #projects {
-  background-color: #f8f9fa;
+  background-color: #f8f9fa; /* Same as general sections */
 }
 
 #blogs {
-  background-color: #ffffff;
+  background-color: #f8f9fa; /* Same as general sections */
 }
 
 #contact {
-  background-color: #f8f9fa;
+  background-color: #f8f9fa; /* Same as general sections */
 }
 
 /* Footer */
