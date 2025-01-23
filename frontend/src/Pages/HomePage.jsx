@@ -34,13 +34,86 @@ const Home = () => {
       );
   };
 
+  const skills = [
+    { src: "./src/assets/react.svg", alt: "React.js", name: "React.js" },
+    { src: "./src/assets/nodejs.png", alt: "Node.js", name: "Node.js" },
+    { src: "./src/assets/mongodb.png", alt: "MongoDB", name: "MongoDB" },
+    {
+      src: "./src/assets/expressjs.svg",
+      alt: "Express.js",
+      name: "Express.js",
+    },
+    { src: "./src/assets/html.png", alt: "HTML", name: "HTML" },
+    { src: "./src/assets/css.png", alt: "CSS", name: "CSS" },
+    { src: "./src/assets/JS.png", alt: "JavaScript", name: "JavaScript" },
+    { src: "./src/assets/python.png", alt: "Python", name: "Python" },
+    { src: "./src/assets/vscode.png", alt: "VS Code", name: "VS Code" },
+    { src: "./src/assets/eclipse.png", alt: "Eclipse", name: "Eclipse" },
+    { src: "./src/assets/pycharm.png", alt: "PyCharm", name: "PyCharm" },
+    { src: "./src/assets/intellij.png", alt: "IntelliJ", name: "IntelliJ" },
+    { src: "./src/assets/apache.png", alt: "Apache", name: "Apache Tomcat" },
+    { src: "./src/assets/rest.png", alt: "REST", name: "RESTful API" },
+    {
+      src: "./src/assets/codeblocks.png",
+      alt: "Code Blocks",
+      name: "Code Blocks",
+    },
+    {
+      src: "./src/assets/bootstrap.png",
+      alt: "BootStrap",
+      name: "BootStrap",
+    },
+    {
+      src: "./src/assets/tailwind.png",
+      alt: "TailWind",
+      name: "TailWind CSS",
+    },
+    {
+      src: "./src/assets/canva.png",
+      alt: "Canva",
+      name: "Canva",
+    },
+  ];
+
+  const SkillsLoop = () => (
+    <div className="skills" style={{ padding: "40px 20px" }}>
+      <h2>Skills</h2>
+      <p>Here are some of the technologies and tools I excel at:</p>
+      <div className="scroll-container">
+        <div className="scroll-content">
+          {skills.map((tech, index) => (
+            <div key={index} className="card">
+              <img src={tech.src} alt={tech.alt} />
+              <h3 style={{ fontSize: "18px", marginTop: "10px" }}>
+                {tech.name}
+              </h3>
+            </div>
+          ))}
+          {skills.map((tech, index) => (
+            <div key={`duplicate-${index}`} className="card">
+              <img src={tech.src} alt={tech.alt} />
+              <h3 style={{ fontSize: "18px", marginTop: "10px" }}>
+                {tech.name}
+              </h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
   const cardStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
     borderRadius: "10px",
     padding: "20px",
     backgroundColor: "white",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
     cursor: "pointer",
+    textAlign: "center",
   };
 
   const containerStyle = {
@@ -52,7 +125,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Header */}
       <header>
         <div className="header-container">
           <div className="logo">LL</div>
@@ -75,16 +147,13 @@ const Home = () => {
         </div>
       </header>
 
-      {/* Introduction */}
       <section id="intro" className="intro">
         <div className="intro-content">
-          {/* Left Section */}
           <div className="intro-text">
             <h1>Hello,</h1>
             <h1>I'm Lungsom Lamnio</h1>
             <p>Code Dreams to Reality!</p>
             <h2>Web Developer | MERN STACK</h2>
-            {/* Social Links */}
             <div className="social-links">
               <a
                 href="https://github.com/LungsomLamnio"
@@ -123,10 +192,7 @@ const Home = () => {
               </a>
             </div>
           </div>
-
-          {/* Right Section */}
           <div className="intro-graphic">
-            {/* Placeholder for future design */}
             <div className="placeholder-design">
               <p>Add your creative designs here!</p>
             </div>
@@ -134,35 +200,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills" className="skills" style={{ padding: "40px 20px" }}>
-        <h2>Skills</h2>
-        <p>Here are some of the technologies and tools I excel at:</p>
-        <div style={containerStyle}>
-          <div style={cardStyle} className="card">
-            <h3>React.js</h3>
-            <p>Building dynamic, user-friendly interfaces.</p>
-          </div>
-          <div style={cardStyle} className="card">
-            <h3>Node.js</h3>
-            <p>Building scalable backend applications.</p>
-          </div>
-          <div style={cardStyle} className="card">
-            <h3>MongoDB</h3>
-            <p>Database management and NoSQL solutions.</p>
-          </div>
-          <div style={cardStyle} className="card">
-            <h3>Express.js</h3>
-            <p>Framework for building server-side applications.</p>
-          </div>
-          <div style={cardStyle} className="card">
-            <h3>HTML, CSS, JavaScript</h3>
-            <p>Core web technologies for front-end development.</p>
-          </div>
-        </div>
+        <SkillsLoop />
       </section>
 
-      {/* Experience Section */}
       <section
         id="experience"
         className="experience"
@@ -206,7 +247,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
       <section
         id="projects"
         className="projects"
@@ -225,7 +265,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
       <section id="contact" className="contact">
         <h2>Contact</h2>
         <form onSubmit={handleSubmit} className="contact-form">
@@ -266,7 +305,6 @@ const Home = () => {
         {status && <p className="status-message">{status}</p>}
       </section>
 
-      {/* Footer */}
       <footer>
         <p>© 2025 LL. All Rights Reserved.</p>
       </footer>

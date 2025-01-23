@@ -330,3 +330,127 @@ canvas {
   color: #0078d4; /* Change color on hover */
   transform: scale(1.2); /* Slightly enlarge on hover */
 }
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.card {
+  min-width: 250px; /* Ensures cards have a consistent size */
+  flex-shrink: 0; /* Prevents cards from shrinking */
+}
+
+.skills .card img {
+  width: 80px; /* Set a consistent width */
+  height: 80px; /* Set a consistent height */
+  object-fit: contain; /* Ensures images fit within the defined space without distortion */
+  margin: 0 auto; /* Center the image horizontally */
+  display: block; /* Ensures no extra inline space */
+}
+
+.skills .card img {
+  width: 100px; /* Increased size for logos */
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Apply consistent spacing to all sections */
+section {
+  padding: 60px 20px; /* Ensure equal padding for top and bottom */
+  margin: 0 auto; /* Center align content */
+}
+
+/* General styling for sections to maintain equal spacing */
+section {
+  padding: 60px 20px; /* Equal padding for top and bottom */
+  margin: 0 auto; /* Center align content */
+}
+
+/* Add separator line for middle sections only */
+/* Add separator line for sections except the first and last */
+section:not(:first-of-type):not(:last-of-type)::after {
+  content: "";
+  display: block;
+  width: 80%; /* Width of the line */
+  height: 2px; /* Thickness of the line */
+  margin: 40px auto; /* Space around the line */
+  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Gradient effect */
+  border-radius: 5px; /* Rounded edges */
+}
+
+section:last-of-type::after {
+  content: "";
+  display: block;
+  width: 80%; /* Adjust the width of the line */
+  height: 2px; /* Adjust the thickness of the line */
+  margin: 40px auto; /* Add space above/below the line */
+  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Gradient color */
+  border-radius: 5px; /* Rounded edges */
+}
+
+/* HomePage.css */
+
+/* Scrolling Container */
+.scroll-container {
+  display: flex;
+  overflow: hidden; /* Hide overflowing content */
+  position: relative;
+  width: 100%; /* Full-width container */
+  background-color: #f8f9fa; /* Optional background */
+}
+
+.scroll-content {
+  display: flex;
+  gap: 20px; /* Space between cards */
+  animation: scroll 15s linear infinite; /* Smooth loop animation */
+}
+
+.card {
+  flex: 0 0 auto; /* Prevent cards from shrinking */
+  width: 150px; /* Adjust card width */
+  text-align: center;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+  height: 200px; /* Adjust height as needed */
+  width: 100%; /* Adjust width if necessary */
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll-seamless 20s linear infinite; /* Adjust duration for speed */
+}
+
+@keyframes scroll-seamless {
+  0% {
+    transform: translateX(0); /* Start at the first card */
+  }
+  100% {
+    transform: translateX(-50%); /* Shift by half the total width */
+  }
+}
