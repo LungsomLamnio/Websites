@@ -111,22 +111,10 @@ section ul li {
 }
 
 /* Specific section overrides (optional) */
-#skills {
-  background-color: #f8f9fa; /* Same as general sections */
-}
-
-#experience {
-  background-color: #f8f9fa; /* Same as general sections */
-}
-
-#projects {
-  background-color: #f8f9fa; /* Same as general sections */
-}
-
-#blogs {
-  background-color: #f8f9fa; /* Same as general sections */
-}
-
+#skills,
+#experience,
+#projects,
+#blogs,
 #contact {
   background-color: #f8f9fa; /* Same as general sections */
 }
@@ -216,4 +204,129 @@ header .logo {
   text-align: center;
   font-size: 1rem;
   color: #0078d4;
+}
+
+/* Intro Section */
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f9f9f9; /* Optional background color */
+  padding: 20px; /* Add some padding */
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f9f9f9; /* Optional background color */
+  padding: 20px; /* Add some padding */
+}
+
+.intro-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%; /* Adjust to control the width */
+  max-width: 1400px; /* Limit the max width */
+  margin: 0 auto; /* Center content horizontally */
+}
+
+.intro-text {
+  flex: 1;
+  text-align: left;
+  padding: 20px; /* Add spacing */
+}
+
+.intro-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.email-me {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.email-me:hover {
+  background-color: #444;
+}
+
+.intro-graphic {
+  flex: 1; /* Adjust size proportionally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  width: auto; /* Flexible width */
+  height: 50vh; /* Reduce height to medium size */
+  max-width: 50vh; /* Keep a square aspect ratio */
+  aspect-ratio: 1 / 1; /* Ensure square shape */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* In your HomePage.css or a global stylesheet */
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+}
+
+.intro-text {
+  width: 50%; /* Left side will take 50% */
+  padding: 20px;
+}
+
+.intro-graphic {
+  width: 50%; /* Right side will take 50% */
+  height: 100vh;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column; /* Stack the sections vertically on smaller screens */
+    height: auto;
+  }
+
+  .intro-text,
+  .intro-graphic {
+    width: 100%; /* Both sections take full width on small screens */
+    height: auto;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center; /* Align links to the left */
+  gap: 15px; /* Space between icons */
+  margin-top: 20px; /* Add spacing above the links */
+}
+
+.social-links a {
+  color: #555;
+  font-size: 1.8rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0078d4; /* Change color on hover */
+  transform: scale(1.2); /* Slightly enlarge on hover */
 }

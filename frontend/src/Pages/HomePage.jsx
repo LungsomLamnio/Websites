@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com"; // Import EmailJS
 import "../styles/HomePage.css";
 
 const Home = () => {
@@ -10,36 +9,31 @@ const Home = () => {
   });
   const [status, setStatus] = useState("");
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Send email using EmailJS
     emailjs
       .sendForm(
-        "service_cqenfdk", // Replace with your EmailJS service ID
-        "template_8lzgsae", // Replace with your EmailJS template ID
+        "service_cqenfdk",
+        "template_8lzgsae",
         e.target,
-        "8vALFIyST5QuvqPO7" // Replace with your EmailJS user ID
+        "8vALFIyST5QuvqPO7"
       )
       .then(
-        (result) => {
+        () => {
           setStatus("Message sent successfully!");
-          setFormData({ name: "", email: "", message: "" }); // Reset form
+          setFormData({ name: "", email: "", message: "" });
         },
-        (error) => {
+        () => {
           setStatus("Failed to send message. Please try again.");
         }
       );
   };
 
-  // Card style for skills/projects/experience
   const cardStyle = {
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
     borderRadius: "10px",
@@ -83,11 +77,61 @@ const Home = () => {
 
       {/* Introduction */}
       <section id="intro" className="intro">
-        <h1>Hello, I am Lungsom Lamnio</h1>
-        <p>
-          Welcome to my personal portfolio. Here you'll find more about my
-          skills, experience, and projects.
-        </p>
+        <div className="intro-content">
+          {/* Left Section */}
+          <div className="intro-text">
+            <h1>Hello,</h1>
+            <h1>I'm Lungsom Lamnio</h1>
+            <p>Code Dreams to Reality!</p>
+            <h2>Web Developer | MERN STACK</h2>
+            {/* Social Links */}
+            <div className="social-links">
+              <a
+                href="https://github.com/LungsomLamnio"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/lungsom-lamnio-339914282/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/lungsom.lamnio/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://x.com/lungsom_lamnio"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100036725803105"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-facebook"></i>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="intro-graphic">
+            {/* Placeholder for future design */}
+            <div className="placeholder-design">
+              <p>Add your creative designs here!</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Skills Section */}
@@ -219,8 +263,6 @@ const Home = () => {
           </div>
           <button type="submit">Send Message</button>
         </form>
-
-        {/* Status Message */}
         {status && <p className="status-message">{status}</p>}
       </section>
 
