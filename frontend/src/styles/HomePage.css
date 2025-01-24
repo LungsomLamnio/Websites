@@ -454,3 +454,117 @@ section:last-of-type::after {
     transform: translateX(-50%); /* Shift by half the total width */
   }
 }
+
+#intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px; /* Add some spacing around the section */
+}
+
+.intro-content {
+  display: flex;
+  width: 100%;
+  gap: 20px; /* Space between text and image */
+}
+
+.intro-text {
+  flex: 1; /* Take up equal space */
+  text-align: left; /* Align text to the left */
+}
+
+.intro-text h1,
+.intro-text p,
+.intro-text h2 {
+  margin: 10px 0; /* Add spacing between elements */
+}
+
+.social-links a {
+  margin-right: 10px; /* Space between social icons */
+  font-size: 1.5rem; /* Icon size */
+}
+
+.intro-elements {
+  flex: 1; /* Take up equal space */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+}
+
+.intro-elements img {
+  width: 80%; /* Reduce the size of the image */
+  max-width: 300px; /* Add a max-width to prevent it from getting too large */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure image fits nicely */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+#intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.intro-content {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.intro-text {
+  flex: 1;
+  text-align: left;
+}
+
+.intro-text h1,
+.intro-text p,
+.intro-text h2 {
+  margin: 10px 0;
+}
+
+.social-links a {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.intro-elements {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.intro-elements img {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+
+  /* Floating animation */
+  animation: float 4s ease-in-out infinite;
+}
+
+.intro-text {
+  flex: 1;
+  text-align: left; /* Ensures the content is aligned left */
+  display: flex; /* Flexbox allows you to align children */
+  flex-direction: column; /* Ensures the content flows vertically */
+  align-items: flex-start; /* Aligns all children to the left */
+}
+
+.typing-effect-container {
+  margin-top: 20px; /* Adjusts the space between the text and typing effect */
+}

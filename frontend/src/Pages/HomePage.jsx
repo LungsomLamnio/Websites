@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/HomePage.css";
+import TypingEffect from "./TypingEffect";
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -32,6 +33,18 @@ const Home = () => {
           setStatus("Failed to send message. Please try again.");
         }
       );
+  };
+
+  const rotatingSpeed = 0.01;
+
+  // UseFrame to animate the movement of 3D objects
+  const animateMovement = (ref) => {
+    useFrame(() => {
+      if (ref.current) {
+        ref.current.rotation.x += rotatingSpeed;
+        ref.current.rotation.y += rotatingSpeed;
+      }
+    });
   };
 
   const skills = [
@@ -167,7 +180,7 @@ const Home = () => {
             <h1>Hello,</h1>
             <h1>I'm Lungsom Lamnio</h1>
             <p>Code Dreams to Reality!</p>
-            <h2>Web Developer | MERN STACK</h2>
+            <TypingEffect />
             <div className="social-links">
               <a
                 href="https://github.com/LungsomLamnio"
@@ -206,10 +219,8 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div className="intro-graphic">
-            <div className="placeholder-design">
-              <p>Add your creative designs here!</p>
-            </div>
+          <div className="intro-elements">
+            <img src="./src/assets/spaceboy.png" alt="photo" />
           </div>
         </div>
       </section>
