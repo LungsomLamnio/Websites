@@ -568,3 +568,58 @@ section:last-of-type::after {
 .typing-effect-container {
   margin-top: 20px; /* Adjusts the space between the text and typing effect */
 }
+
+#hello,
+#im {
+  font-weight: normal; /* Remove boldness */
+}
+
+#hello {
+  font-family: "Macondo";
+}
+
+/* Apply Caveat font to #im */
+#im {
+  font-family: "Caveat";
+}
+
+.intro-text {
+  margin-left: 10%; /* Shifts the content to the right */
+}
+
+.intro-content {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  align-items: flex-start; /* Aligns content to the top */
+  height: 100vh; /* Full height of the viewport */
+  letter-spacing: 2px;
+}
+
+.intro-text,
+.intro-elements {
+  margin-top: 50px; /* Shift text upwards */
+  margin-right: 20px; /* Optional: Add margin to the right if needed */
+}
+
+#desc {
+  font-family: "Shadows Into Light", cursive; /* Apply the Shadows Into Light font */
+  font-size: 24px; /* Adjust font size as needed */
+  color: #000; /* Set text color (optional, adjust as needed) */
+  line-height: 1.5; /* Adjust line height for readability */
+}
+
+.skills .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px; /* Increase padding for larger cards */
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  width: 180px; /* Adjust the width to increase the card size */
+  height: 180px; /* Adjust the height to increase the card size */
+}

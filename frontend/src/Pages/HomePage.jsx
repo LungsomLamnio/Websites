@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/HomePage.css";
 import TypingEffect from "./TypingEffect";
+import emailjs from "emailjs-com";
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -177,10 +178,14 @@ const Home = () => {
       <section id="intro" className="intro">
         <div className="intro-content">
           <div className="intro-text">
-            <h1>Hello,</h1>
-            <h1>I'm Lungsom Lamnio</h1>
-            <p>Code Dreams to Reality!</p>
+            <h1 id="hello">Hello,</h1>
+            <h1 id="name">
+              {" "}
+              <span id="im">I ' m</span> &nbsp; Lungsom
+            </h1>
+
             <TypingEffect />
+            <p id="desc">Code Dreams to Reality!</p>
             <div className="social-links">
               <a
                 href="https://github.com/LungsomLamnio"
