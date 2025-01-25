@@ -105,8 +105,11 @@ const Home = () => {
 
   const SkillsLoop = () => (
     <div className="skills" style={{ padding: "40px 20px" }}>
-      <h2>Skills</h2>
-      <p>Here are some of the technologies and tools I excel at:</p>
+      <h2 id="secHead">Skills</h2>
+      <p id="secPara">
+        Here are the cutting-edge technologies and tools that fuel my passion
+        for building innovative solutions:
+      </p>
       <div className="scroll-container">
         <div className="scroll-content">
           {skills.map((tech, index) => (
@@ -244,8 +247,12 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        <h2>Experience</h2>
-        <p>Here are some of the positions I have held:</p> <br />
+        <h2 id="secHead">Experience</h2>
+        <p id="secPara">
+          Here are some of the impactful roles I’ve had the privilege to lead
+          and contribute to:
+        </p>{" "}
+        <br />
         <div
           style={{
             display: "flex",
@@ -310,7 +317,9 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        <h2 style={{ marginBottom: "10px" }}>Projects</h2>
+        <h2 style={{ marginBottom: "10px" }} id="secHead">
+          Projects
+        </h2>
         <p
           style={{
             marginBottom: "30px",
@@ -319,6 +328,7 @@ const Home = () => {
             textAlign: "center",
             maxWidth: "600px",
           }}
+          id="secPara"
         >
           Explore some of my recent projects showcasing my skills in software
           development, problem-solving, and user experience design.
@@ -453,7 +463,7 @@ const Home = () => {
       </section>
 
       <section id="contact" className="contact">
-        <h2>Contact</h2>
+        <h2 id="secHead">Contact Me</h2>
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
             <label htmlFor="name">Name:</label>
